@@ -2,7 +2,7 @@ import { ref } from "@vue/reactivity";
 import { fireAuth } from "../firebase/firebase";
 
 const error = ref(null);
-const signup = async (email, password, fullName) => {
+const signup = async (email, password, displayName) => {
   error.value = null;
 
   try {
@@ -10,7 +10,7 @@ const signup = async (email, password, fullName) => {
     if (!res) {
       throw new Error("could not complete the signups");
     }
-    await res.user.updateProfile({ fullName });
+    await res.user.updateProfile({ displayName });
 
     error.value = null;
 
