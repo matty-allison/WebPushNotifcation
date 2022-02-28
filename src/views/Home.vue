@@ -1,16 +1,19 @@
 <template>
   <div class="home">
-    <Messaging /> 
+    <Signup />
+    <Login />  
   </div>
 </template>
 
 <script>
-import Messaging from "@/components/Messaging.vue";
+import Signup from "@/components/Signup.vue";
+import Login from '../components/Login.vue'
 
 export default {
   name: "Home",
   components: {
-    Messaging,
+    Signup,
+    Login,
   },
 };
 </script>

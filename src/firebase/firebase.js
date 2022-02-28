@@ -1,5 +1,8 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/messaging";
+import "firebase/compat/firestore";
+import "firebase/compat/storage";
+import "firebase/compat/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA6X6CUhYIu5rD3fP3LTBcGnga83zWz11g",
@@ -12,6 +15,10 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+const fireStore = firebase.firestore();
+const fireStorage = firebase.storage();
+const fireAuth = firebase.auth();
 const firebaseMessaging = firebase.messaging();
 
-export default firebaseMessaging;
+export { firebaseMessaging, fireStore, fireStorage, fireAuth };
