@@ -2,7 +2,7 @@
 	<h2>SIGN-UP</h2>
 	<form @submit.prevent="handleSubmit" class="form">
 		<div>
-			<input type="text" required placeholder="full name" v-model="fullName" />
+			<input type="text" required placeholder="full name" v-model="displayName" />
 		</div>
 		<div>
 			<input type="email" required placeholder="email" v-model="email" />
@@ -31,16 +31,16 @@ export default {
 	setup() {
 		const { error, signup } = useSignup();
 		const { error: err, addDoc } = addToCollection("users");
-		const fullName = ref("");
+		const displayName = ref("");
 		const email = ref("");
 		const password = ref("");
 		const router = useRouter();
 
 		const handleSubmit = async () => {
-			await signup(email.value, password.value, fullName.value);
+			await signup(email.value, password.value, displayName.value);
 
 			const user = {
-				fullName: fullName.value,
+				displayName: displayName.value,
 				email: email.value,
 				password: password.value,
 			};
@@ -50,7 +50,7 @@ export default {
 			await fetch(`http://localhost:3000/users`, {
 				method: "POST",
 				body: JSON.stringify({
-					fullName: fullName.value,
+					displayName: displayName.value,
 					email: email.value,
 					password: password.value,
 				}),
@@ -68,7 +68,7 @@ export default {
 			}
 		};
 
-		return { fullName, email, password, handleSubmit, error };
+		return { displayName, email, password, handleSubmit, error };
 	},
 };
 </script>
