@@ -19,7 +19,7 @@ export default {
 
 		const handleSubmit = async () => {
 			const chat = {
-				fullName: user.value.displayName,
+				displayName: user.value.displayName,
 				message: message.value,
 			};
 

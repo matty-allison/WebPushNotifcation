@@ -1,23 +1,5 @@
 {
   "users": [
-    {
-      "displayName": "Matthew Allison",
-      "email": "mattymallison@gmail.com",
-      "password": "Mallison17$",
-      "id": 1
-    },
-    {
-      "displayName": "blueBerry",
-      "email": "blueberry@test.com",
-      "password": "test1234",
-      "id": 2
-    }
   ],
-  "messages": [
-    {
-      "displayName": "blueBerry",
-      "message": "sdasdasdas",
-      "id": 1
-    }
-  ]
+  "messages": []
 }
